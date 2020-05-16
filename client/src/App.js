@@ -1,10 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+// Component Imports
+import Landing from './components/Landing/Landing';
 
 function App() {
   return (
-    <div className='App'>
-      <h1>Hello World</h1>
-    </div>
+    <Router>
+      <div className='App'>
+        <Route exact path='/' component={Landing} />
+      </div>
+    </Router>
   );
 }
 
