@@ -11,16 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const db_user = process.env.DB_USER;
-const db_password = process.env.DB_PASSWORD;
-
-const MONGODB_URI =
-  process.env.MONGODB_URI ||
-  'mongodb://' +
-    db_user +
-    ':' +
-    db_password +
-    '@ds051523.mlab.com:51523/heroku_tkn6n1wr';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/omega-wo';
 
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -38,9 +29,9 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
   // Express serve up index.html file if it doesn't recognize route
-  const path = require('path');
+  // const path = require('path');
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client/'));
+    res.sendFile(path.resolve(__dirname, 'client/build/index.html'));
   });
 }
 
