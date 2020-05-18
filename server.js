@@ -11,7 +11,16 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/omega';
+const db_user = process.env.DB_USER;
+const db_password = process.env.DB_PASSWORD;
+
+const MONGODB_URI =
+  process.env.MONGODB_URI ||
+  'mongodb://' +
+    db_user +
+    ':' +
+    db_password +
+    '@ds051523.mlab.com:51523/heroku_tkn6n1wr';
 
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
