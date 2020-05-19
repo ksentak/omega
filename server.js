@@ -18,10 +18,10 @@ mongoose
   .then(() => console.log('MongoDB Connected!'))
   .catch((err) => console.log(err));
 
-// const Users = require('./routes/Users');
+const Users = require('./routes/Users');
 // const savedWorkouts = require('./routes/Workouts');
 
-// app.use('/users', Users);
+app.use('/users', Users);
 // app.use('/savedWorkouts', savedWorkouts);
 
 if (process.env.NODE_ENV === 'production') {
