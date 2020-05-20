@@ -2,11 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // Components
-import Landing from './components/Landing/Landing';
-import Login from './components/Login/Login';
-import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
-import Register from './components/Register/Register';
+import Landing from '../Landing/Landing';
+import Login from '../Login/Login';
+import Navbar from '../Navbar/Navbar';
+import Profile from '../Profile/Profile';
+import Register from '../Register/Register';
+
+// CSS
+import './App.css';
 
 function App() {
   return (
