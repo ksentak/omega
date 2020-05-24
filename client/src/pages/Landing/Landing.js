@@ -2,30 +2,30 @@ import React, { Component } from 'react';
 
 // Material UI
 import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+import styles from './LandingStyles';
+
 // Images
 import logo from '../../assets/images/logo.png';
-// CSS
-import './Landing.css';
 
 class Landing extends Component {
   render() {
+    const { classes } = this.props;
     return (
       <div className='Landing'>
         <div className='container-fluid text-center'>
-          <img src={logo} alt='logo' className='logoImg' />
+          <img src={logo} alt='logo' className={classes.logoImg} />
           <div classsName='row'>
             <Button
-              className='logoBtn'
+              className={classes.landingBtn}
               variant='outlined'
-              color='secondary'
               size='large'
             >
               Login
             </Button>
             <Button
-              className='logoBtn'
+              className={classes.landingBtn}
               variant='outlined'
-              color='secondary'
               size='large'
             >
               Sign up
@@ -37,4 +37,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default withStyles(styles)(Landing);
