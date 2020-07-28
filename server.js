@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/omega-wo';
+const MONGODB_URI = process.env.DB_URI || 'mongodb://localhost/omega-wo';
 
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
