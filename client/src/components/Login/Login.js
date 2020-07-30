@@ -4,6 +4,14 @@ import { login } from '../../utils/UserFunctions';
 // CSS
 import './Login.css';
 
+// Material UI
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+import styles from './LoginStyles';
+
+// Image
+import logo from '../../assets/images/logo.png';
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -36,9 +44,12 @@ class Login extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
       <div className='Login'>
-        <h1>Login</h1>
+        {/* <div className={classes.logoDiv}>
+          <img src={logo} alt='logo' className={classes.logoImage} />
+        </div> */}
         <div className='col-md-6 mt-5 mx-auto'>
           <form noValidate onSubmit={this.onSubmit}>
             <h1 className='h3 mb-3 font-weight-normal'>Please Log In</h1>
@@ -64,9 +75,9 @@ class Login extends Component {
                 onChange={this.onChange}
               />
             </div>
-            <button type='submit' className='button btn-block'>
-              Sign In
-            </button>
+            <Button className={classes.submitBtn} variant='outlined' size='large' type='submit'>
+              Log in
+            </Button>
           </form>
         </div>
       </div>
@@ -74,4 +85,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withStyles(styles)(Login);
